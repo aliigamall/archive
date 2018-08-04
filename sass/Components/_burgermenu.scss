@@ -1,0 +1,71 @@
+.burgermenu{
+	width:50px;
+	height:30px;
+	position:relative;
+	cursor: pointer;
+	float: $right;
+	margin-#{$left}: 40px;
+    margin-top: 5px;
+    @include breakpoint(mid){
+    	display: none;
+    }
+}
+.burgermenu-menubar{
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	background-color: #404041;
+	top:0;
+	#{$right}: 0;
+	@include transition();
+	&:nth-child(1){
+		width: 30px;
+	}
+	&:nth-child(2){
+		width: 40px;
+		top:50%;
+		@include translate(0, -50%);
+	}
+	&:nth-child(3){
+		top:auto;
+		bottom:0;
+	}
+}
+
+//== States
+//
+
+//## Hover
+.burgermenu:hover{
+	.burgermenu-menubar{
+		background-color: $primary-base;
+	}
+	.burgermenu-menutext{
+		color: $primary-base;
+	}
+	.burgermenu-menubar:nth-of-type(1) {
+	   @include translate(0, -1.5px);
+	}	
+	.burgermenu-menubar:nth-of-type(3) {
+		@include translate(0, 1.5px);
+	}
+}
+
+//## Active
+.burgermenu.is-active{
+	.burgermenu-menubar{
+		background-color: $secondary-base;
+	}
+	.burgermenu-menubar:nth-of-type(1) {
+		@include transform(rotate(45deg) translateY(-3.5px));
+       transform-origin: 0 0;
+	}
+	.burgermenu-menutext {
+		@include scale(0);
+		letter-spacing: 13px;
+	}
+	.burgermenu-menubar:nth-of-type(3) {
+	    @include transform(rotate(-45deg) translateY(0px));
+	    transform-origin: 0 0;
+	}
+}

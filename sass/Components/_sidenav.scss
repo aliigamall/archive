@@ -1,0 +1,148 @@
+$navBg: #434344;
+$navColor: #b0b1b3;
+
+.l-sidenav{
+	height: 100vh;
+	background-color: $navBg;
+	overflow: auto;
+    @include breakpoint(isCommon){
+	    position: fixed;
+	    top: 0;
+	    z-index: 10;
+	    #{$right}: 0;
+	    bottom: 0;    	
+	    @include translate(100%, 0);
+	    @include transition;
+    }
+    @include breakpoint(mid){
+	    text-align: center;
+	    width: $sidenav-width;
+	    float: $right;
+		position: static;
+    }
+    &.is-open{
+    	@include translate(0, 0);
+    }
+}
+
+.sidenav{
+	background-color: $navBg;
+	height: 100vh;
+}
+.sidenav-link{
+	color: $navColor;
+	padding: 20px;
+	text-align: center;
+	display: block;
+}
+.sidenav-closelink{
+	@include breakpoint(mid){
+		display: none;
+	}
+}
+.sidenav--icon{
+	width: 25px;
+	height: 25px;
+	padding: 5px;
+	background-color: $navColor;
+	color: $navBg;
+	border-radius: 50%;
+}
+.sidenav--title{
+	display: block;
+	text-align: center;
+}
+
+//## states
+// hover
+.sidenav-link:hover{
+	.sidenav--icon{
+		background-color: $primary-base;
+	}
+	.sidenav--title{
+		color: $primary-base;
+	}
+}
+.sidenav-link.sidenav-ask:hover{
+	.sidenav--icon{
+		background-color: $askClr;
+	}
+	.sidenav--title{
+		color: $askClr;
+	}
+}
+.sidenav-link.sidenav-facebook:hover{
+	.sidenav--icon{
+		background-color: $facebookClr;
+	}
+	.sidenav--title{
+		color: $facebookClr;
+	}
+}
+.sidenav-link.sidenav-twitter:hover{
+	.sidenav--icon{
+		background-color: $twitterClr;
+	}
+	.sidenav--title{
+		color: $twitterClr;
+	}
+}
+.sidenav-link.sidenav-fav:hover{
+	.sidenav--icon{
+		background-color: $favClr;
+	}
+	.sidenav--title{
+		color: $favClr;
+	}
+}
+
+.sidenav-active .sidenav-link,
+.sidenav-active .sidenav-link:hover{
+	background-color: $primary-base;
+	.sidenav--icon{
+		background-color: #fff;
+	}
+	.sidenav--title{
+		color: #fff;
+	}
+}
+
+.sidenav-active .sidenav-twitter{
+	background-color: $twitterClr;
+	.sidenav--icon{
+		color: $twitterClr;
+	}
+	&:hover{
+		background-color: $twitterClr;
+	}
+}
+
+.sidenav-active .sidenav-facebook{
+	background-color: $facebookClr;
+	.sidenav--icon{
+		color: $facebookClr;
+	}
+	&:hover{
+		background-color: $facebookClr;
+	}
+}
+
+.sidenav-active .sidenav-ask{
+	background-color: $askClr;
+	.sidenav--icon{
+		color: $askClr;
+	}
+	&:hover{
+		background-color: $askClr;
+	}
+}
+
+.sidenav-active .sidenav-fav{
+	background-color: $favClr;
+	.sidenav--icon{
+		color: $favClr;
+	}
+	&:hover{
+		background-color: $favClr;
+	}
+}

@@ -1,0 +1,81 @@
+.l-navbar{
+	
+}
+.navbar{
+	padding-top: 8px;
+	> ul{
+		padding: 0;
+		margin: 0;
+	}
+}
+.navbar-item{
+	float: $right;
+	list-style: none;
+	margin-#{$left}: rem(40);
+}
+.navbar--link{
+	font-weight: 700;
+	color: #474747;
+	font-size: rem(14);
+	position: relative;
+	padding: 0 10px;
+	&:after{
+		content: '';
+		position: absolute;
+		#{$left}: 50%;
+		#{$right}: 50%;
+		opacity: 0;
+		height: 6px;
+		background: $secondary-base;
+		top: calc(100% + 23px);
+		@include transition();
+	}
+}
+
+.navbar-submenu{
+	position: absolute;
+    right: 0;
+    left: 0;
+    background: $primary-base;
+    top: 100%;
+    list-style: none;
+    padding: rem(35) rem(70);
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    visibility: hidden;
+    @include transition();
+    li{
+    	width: 25%;
+    	padding: 0 rem(15);
+    	a{
+    		color: rgba(#fff, 0.8);
+		    display: block;
+		    padding: 12px 0;
+		    &:before{
+		    	content: '';
+		    	width: 4px;
+		    	height: 4px;
+		    	border-radius: 50%;
+		    	background-color: $secondary-base;
+	    	    display: inline-block;
+			    margin-#{$left}: 10px;
+		    }
+    	}
+    }
+}
+
+// navbar states
+.navbar-item:hover{
+	.navbar--link{
+		&:after{
+			#{$left}: 0;
+			#{$right}: 0;
+			opacity: 1;
+		}
+	}
+	.navbar-submenu{
+		opacity: 1;
+	    visibility: visible;
+	}
+}

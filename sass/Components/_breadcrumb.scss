@@ -1,0 +1,86 @@
+// ## Markup -- SP Breadcrumb
+// <span class="breadcrumb">
+//     <span>
+//         <a class="breadcrumb-root" href="#">breadcrumb-root</a>
+//     </span>
+//     <span class="breadcrumb-separator"></span>
+//     <span>
+//         <a class="breadcrumb-link" href="/sites/gsa/profile/Pages/default.aspx">breadcrumb-link</a>
+//     </span>
+//     <span class="breadcrumb-separator"></span>
+//     <span>
+//         <a class="breadcrumb-link" href="/sites/gsa/profile/Pages/default.aspx">breadcrumb-link</a>
+//     </span>
+//     <span class="breadcrumb-separator"></span>
+//     <span class="breadcrumb-current">breadcrumb-current</span>
+// </span>
+
+
+.breadcrumb{
+	background-color:$breadCrumb-bg;
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 0;
+	font-size: 0.75em;
+	position:relative;
+	margin-top: 15px;
+    @include breakpoint(isMobile){
+        padding-#{$left}:23px;
+    }
+	> span{
+		float:$right;
+		+ span{
+			margin-#{$right}:7px;
+		}
+        &:first-child,
+        &:nth-child(2){
+        display:none
+        }
+	}
+	a,
+    &:visited
+    {
+		color:$breadcrumb-link-color;
+        font-size:rem(13);
+	}
+    a{
+        &:hover{
+            color:#ffdc66;
+        }
+    }
+}
+
+.breadcrumb-root{		// breadcrumb root node
+	/*&:before{
+		content: "";
+		width: 30px;
+		display: inline-block;
+		height: 2px;
+		background: $secondary-base;
+		margin-#{$left}: 10px;
+	}*/
+}
+.breadcrumb-separator{		// breadcrumb separator
+    font-size: 0;
+    padding: rem(9) rem(6);
+	&:before{
+		/*content: $arrow-dir;
+		font-family:$fa;
+		color: inherit;
+		display:block;*/
+            content: "";
+    width: 0px;
+    height: 0px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-#{$right}: 5px solid rgba(255, 255, 255, 0.73);
+	}
+}
+.breadcrumb-link{}
+.breadcrumb-current{	// breadcrumb current node
+	color: $breadcrumb-current-color;
+    font-size: rem(13);
+}
+
+
+    

@@ -1,0 +1,108 @@
+	.Grid{
+    margin-bottom: 0;
+    margin-bottom: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+        border: 1px solid #dddddd;
+        margin-bottom:0px;
+	
+	th {
+    background: $primary-base;
+    color: white;
+    font-weight: bold;
+    line-height: 2 !important;
+    text-align: center;
+    text-transform: uppercase;
+	border:0!important;
+    font-size: rem(16);
+         &:first-child{
+            text-align: $right;
+            padding-#{$right}:rem(20);
+        }
+	}
+	td {
+    color: #5a5a5a;
+    font-size:  rem(15);
+    text-align: center;
+	font-weight: normal !important;
+    background-color:white;
+        &:first-child{
+            text-align: $right;
+            padding-#{$right}:rem(20);
+        }
+	}
+}
+
+.GridFooterMain {
+    background: #f3f4f8;
+    border-image: none;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    color: black;
+    font-size: 14px;
+    height: 41px;
+    text-transform: uppercase;
+    width: 100%;
+	    border: 1px solid #dddddd;
+    border-top: 0px;
+    
+		td{
+            vertical-align: middle !important;
+            padding: 13px;
+                @include breakpoint(isMobile){
+                display:none;
+                }
+			}
+        td.GridFooterDD{
+            select {
+            width: rem(75);
+            height: auto;
+            display: inline-block;
+            }
+        }
+        td.GridFooterPager {
+        text-align: left;
+        float: none;
+        direction: ltr;
+            @include breakpoint(isMobile){
+            display:block;
+                padding: 5px;
+            }
+            a {
+            float: left;
+            margin: 0 2px;
+            position: relative;
+            text-align: center;
+            top: 5px;
+            color: black;
+            padding: 0px 8px;
+            display: inline-block;
+                &.aspNetDisabled {
+                color: #c5c5c5;
+                    &:hover{
+                        background-color:transparent;
+                    }
+                }
+                &:hover{
+				@include transition();
+				background:#079071;
+				color:#fff;
+				}       
+                &.GridViewSelectedPage {
+                background: $primary-base;
+                color: white;
+                    &:hover{
+                        background-color:$primary-base;
+                    }
+                }
+            }
+        }
+}
+
+
+.grid-boxShadow {
+    -webkit-box-shadow:1px 0px 6px 2px #ebecec;
+    box-shadow: 1px 0px 6px 2px #ebecec;
+        margin: 40px 0;
+}
+

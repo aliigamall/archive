@@ -1,0 +1,81 @@
+#s4-bodyContainer{
+	margin-bottom:0;
+	padding-bottom: 0;
+}
+
+body {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}
+
+#s4-workspace {
+    overflow: hidden;
+    height: auto !important;
+    width: 100% !important;
+    position: inherit !important;
+}
+
+.ms-ToolPaneOuter{
+	font-family: Segoe UI, Tahoma;
+	z-index: 10;
+    position: relative;
+	font-size: 13px;
+	position:absolute;
+	top:210px;
+	    #{$left}: 20px;
+}
+#ctl00_DeltaPlaceHolderMain td{
+	vertical-align:top;
+}
+#s4-bodyContainer{
+	padding-bottom:0;
+}
+#contentBox{
+	min-width:280px;
+}
+.ribbon-wrapper {
+   // padding-#{$right}: $sideNavWidth+px;
+
+}
+
+
+#s4-titlerow{
+	display:none !important;
+}
+.dfwp-column {
+	margin:0;
+}
+
+.ms-webpart-cell-vertical, .ms-webpart-zone, .ms-webpart-chrome-vertical {
+    display: block;
+}
+.container .ms-webpartzone-cell{
+	margin-bottom:0;
+}
+li.dfwp-item:nth-child(even) .padding-right-0 {
+    padding-left: 0;
+} 
+
+.editmodePanel{
+	display:none;
+	padding:20px;
+	background-color:#e2e2e2;
+	border:1px dashed #ccc;
+}
+.editMode{
+	.editmodePanel{
+		display:block;
+	}
+} 
+
+.ms-dlgContent {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%);
+}
+
+.ms-dlgOverlay{
+	height: 100vh !important;
+    position: fixed !important;
+}

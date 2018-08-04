@@ -1,0 +1,33 @@
+.sitefooter{
+    padding-top: 40px;
+    background-color: #f7f7f7;
+    margin-top: auto;
+}
+.sitefooter-nav{
+    text-align: center;
+    font-size: 12px;
+}
+.siterfooter--link{
+    display: inline-block;
+    @include breakpoint(isMobile){
+        margin-bottom: 10px;
+    }
+    > a{
+        color: #404040;
+        font-weight: 700;
+        &:hover{
+            color: $primary-base;
+        }
+    }
+    + .siterfooter--link{
+        margin-#{$right}: 5px;
+        &:before{
+            content: '|';
+            margin-#{$left}: 5px;
+        }
+    }
+}
+.sitefooter-copyright{
+    font-size: 11px; 
+    margin-top: 10px;   
+}

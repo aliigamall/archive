@@ -1,0 +1,13 @@
+.l-pagecontent{
+	min-height: calc(100vh - #{$siteheader-height});
+	padding: 15px;
+	background-color: #f7f7f7;
+	min-height: 100vh;
+	display: flex;
+    flex-direction: column;
+	@include breakpoint(mid){
+		padding:  rem(40);
+		float: $right;
+		width: calc(100% - #{$sidenav-width});
+	}
+}

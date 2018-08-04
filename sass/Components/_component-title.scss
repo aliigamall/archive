@@ -1,0 +1,17 @@
+.componentTitle{
+	border-#{$right}: 3px solid $secondary-base;
+	padding-#{$right}: rem(12);
+	margin-bottom: rem(23);
+	font-size : 17px;
+	line-height:rem(30);
+	@include breakpoint(large){
+		font-size:rem(25);	
+	}	
+    &.componentTitle-PaddingLeft{
+        padding-#{$left}:rem(80)
+    }
+    .btn-componentTitle{
+        float:$left;
+		min-width: 10px;
+    }
+}

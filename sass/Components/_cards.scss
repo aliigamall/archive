@@ -1,0 +1,127 @@
+%card-title{
+    font-size: rem(23);  
+    color: inherit;  
+    margin: 0;
+}
+%card-date{
+    font-size: rem(13);
+    color: #585858;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #FFF;
+  color: #404041;
+  border-top: 4px solid;
+  max-width: 750px;
+  margin: auto;
+  @include box-shadow(0px 2px 3px 0px rgba(151, 151, 151, 0.5));
+  +.card{
+    margin-top: 25px;
+  }
+}
+
+.card-header{
+    @extend .clearfix;
+    padding: 20px 0;
+}
+.card--bookmarkactions{
+  font-size: 18px;
+  a{
+    margin-#{$right}: 5px;
+    color: #ccc;
+    position: relative;
+    display: inline-block;
+    @include transition;
+    &:hover,
+    &.is-active{
+      color: $primary-base;
+    }
+  }
+  sup{
+    font-size: rem(14);
+    display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    #{$right}: -15px;
+    top: -2px;
+    @include scale(0);
+    @include transition;
+  }
+  a.rating.is-active{
+    sup{
+      opacity: 1;
+      visibility: visible;
+      @include scale(1);
+    }
+  }
+}
+.card--avatar{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    float: $right;
+    margin-#{$left}: 15px;
+    > img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.card--authorname{
+    @extend %card-title;
+}
+.card--time{
+    @extend %card-date;
+}
+.card-content{
+    font-size: rem(16);
+    color: #404041;
+    padding: 0 15px
+}
+.card-footer{
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  margin-top: rem(10);
+  ul{
+    margin-bottom: 0;
+  }
+}
+
+.card-action{
+  text-decoration: underline;
+  font-size: rem(13);
+  color: #404040;
+  line-height: 2;
+  &:hover{
+    color: $primary-base;
+  }
+}
+
+
+// variations
+.card-twitter{
+    color: $twitterClr;
+}
+
+.card-ask{
+    color: $askClr;
+}
+
+.card-facebook{
+  color: $facebookClr;
+}
+.card-fav{
+  color: $favClr;
+}
+.card-content__tags{
+  margin-bottom: 10px;
+  font-style: 14px;
+  > a{
+    margin-#{$left}: 10px;
+  }
+}

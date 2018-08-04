@@ -1,0 +1,226 @@
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+	outline:none;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-dotTitlePositionRight {
+    ul.slick-dots {
+    position: absolute;
+    height: 26px;
+    #{$right}: rem(15);
+    #{$left}: auto;
+    margin: 0;
+    padding: 0;
+    bottom: rem(15);
+        @include breakpoint(isCommon){}
+        .slick-dot{
+        background-color:#fff;
+        }
+    }
+
+    
+}
+
+
+.slick-dots{
+	position: absolute;
+    #{$right}: 0;
+    bottom: 40px;
+    padding: 0 10px;
+	> li{
+		float:#{$right};	
+		margin-#{$left}: 10px;	
+		list-style: none;
+		cursor:pointer;
+		&.slick-active{
+			.slick-dot{
+				background: $primary-base;
+				&.banner-dot{
+					background: #fff;
+				}
+			}
+		}
+	}
+}
+.slick-dot{
+	@include border-radius(50%);
+	background: #c9cbcb;
+    display: inline-block;
+    width: rem(10);
+    height: rem(10);
+    cursor: pointer;
+	&:hover{
+		background: $primary-base;
+	}
+	&.banner-dot{
+		width:60px;
+		height:3px;
+		background-color:rgba(255,255,255,0.3);
+		@include border-radius(0);
+		&:hover{
+			background: #fff;
+		}
+	}
+}
+
+.slick-dotTitlePosition {
+    ul.slick-dots {
+    position: absolute;
+    top: rem(-50);
+    height: 26px;
+    #{$left}: 0;
+    #{$right}: auto;
+    margin: 0;
+    padding: 0;
+        @include breakpoint(isCommon){
+            top:-40px;
+        }
+    }
+    
+}
+
+.slick-dotTitlePositionCenter {
+    ul.slick-dots {
+    position: absolute;
+    bottom: rem(-60);
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+        @include breakpoint(isCommon){}
+        li{
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        float: none;
+        }
+    }
+    
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    width: 20px;
+    z-index: 3;
+    cursor: pointer;
+    &.prevArrow {
+		left: -35px;
+		right: auto;
+		width: 24px;
+    }
+    &.nextArrow {
+		left: auto;
+		right:-35px;
+    }
+}
+.slick-arrowOpacity{
+    .slick-arrow {
+        opacity:0.7;
+        &.prevArrow {
+			left: 12px;
+        }
+        &.nextArrow {
+			right:12px;
+        }
+
+    }
+}

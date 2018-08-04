@@ -1,0 +1,40 @@
+// Pager
+// -------------------------
+$strong-backgroundColor        : #9d8a70;
+$strong-color                  : #fff;
+$pager-backgroundColor         : #e8e8e8;
+$pager-color                   : #898989;
+
+
+
+
+
+.CQWPPager{
+	text-align:center;	
+	margin-bottom: rem(30);
+	a, strong{
+	padding: rem(3) rem(12);
+    line-height: 1.42857;
+    text-decoration: none;
+    color: $pager-color;
+    background-color: $pager-backgroundColor ;
+    border: 1px solid $pager-backgroundColor ;
+    margin: 0 2px;
+    border-radius: 3px;
+   font-weight: normal;
+   display: inline-block;
+		
+		@include transition();
+		&:hover{
+			color:#000;
+		}
+		
+		&.pagerArr{}
+	}
+	strong,strong:hover{
+		color: $strong-color;
+		border-color:$strong-backgroundColor;
+		background-color: $strong-backgroundColor;
+	}
+
+}

@@ -1,0 +1,7 @@
+.lg-fullscreen {
+        background-image: url(../../images/lg-full.svg);
+
+        .lg-fullscreen-on & {
+            background-image: url(../../images/lg-minimize.svg);
+        }
+}

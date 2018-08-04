@@ -1,0 +1,119 @@
+.socialicons{
+
+}
+.socialicons-item{
+	width: 25px;
+    height: 25px;
+    padding: 5px;
+    background-color: #a4a5a7;
+    color: #f1f1f1;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 19px;
+    +.socialicons-item{
+    	margin-#{$right}: 15px; 
+    }
+}
+.socialicons-item.socialicons--like{
+	background-color: transparent;
+	width: auto;
+	.socialicons--icon{
+	    color: #a4a5a7;	    
+	}
+	.icon{
+		@include transform(scale(1.8) translateY(1px));
+	}
+	.socialicons--count{
+	    margin-#{$right}: 10px;
+	    color: $primary-base;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		right: 100%;
+		bottom: -10px;
+		font-size: 11px;
+		font-weight: 700;
+		@include transition();
+	}
+	&.is-active{
+		.socialicons--icon{
+			color: $primary-base;
+		}
+		.socialicons--count{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.socialicons--icon{
+	color: #f1f1f1;
+	position: relative;
+}
+.socialicons--tooltip{
+ 	background: #434344;
+    position: absolute;
+    display: block;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    top: -38px;
+    #{$right}: 0;
+    opacity: 0;
+    visibility: hidden;
+    font-family: $font-family;
+    font-weight: normal;
+    @include transform(translateX(calc(50% + -6px)) translateY(-5px));
+    @include transition();
+    &:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(67, 67, 68, 0);
+		border-top-color: #434344;
+		border-width: 5px;
+		margin-left: -5px;
+	}
+}
+
+// states
+.socialicons-item.socialicons--copy:hover{
+	background-color: $primary-base;
+	.socialicons--icon{
+		color: #fff;
+	}
+}
+
+.socialicons-item.socialicons--facebook:hover{
+	background-color: $facebookClr;
+	.socialicons--icon{
+		color: #fff;
+	}
+}
+
+.socialicons-item.socialicons--twitter:hover{
+	background-color: $twitterClr;
+	.socialicons--icon{
+		color: #fff;
+	}
+}
+
+.socialicons-item.socialicons--like:hover{
+	.socialicons--icon{
+		color: $primary-base;
+	}
+}
+
+.socialicons-item:hover .socialicons--tooltip{
+	opacity: 1;
+	visibility: visible;	
+	@include transform(translateX(calc(50% + -6px)) translateY(0));
+}
