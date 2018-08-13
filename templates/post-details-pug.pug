@@ -1,0 +1,82 @@
+doctype 5
+include mixins/siteheader.pug
+include mixins/sidenav.pug
+html(lang="en")
+
+    head
+        include modules/meta.pug
+        include modules/styles.pug
+        title الأرشيف
+
+    body
+        +siteheader('siteheader-publications siteheader-publications--ask')
+        .container-fluid
+            .row
+                +sidenav('', 'sidenav-active', '', '', '')
+                .l-pagecontent
+                    .pageHeader
+                        h2(class= "pageHeader-title u-pull-right pageHeader--ask") التفاصيل
+                        .u-pull-left
+                            .form-inline
+                                .form-group
+                                    select.form-control
+                                        option(value="10") رتب على حسب
+                                        option(value="10") الأحدث
+                                        option(value="10") الأقدم
+                                .form-group
+                                    label إعرض
+                                    select.form-control
+                                        option(value="10") 10
+                                        option(value="10") 10
+                                        option(value="10") 10
+                    div(class="card card-ask")
+                        .card-header
+                            .col-sm-10
+                                .card--avatar
+                                    img(src="images/avatar.jpg" alt="author avatar")
+                                h3.card--authorname خباب مروان الحمد
+                                .card--time منذ 20 دقيقة
+                            .col-sm-2.text-left.card--bookmarkactions
+                                a(href="#0" class="toggle-action rating")
+                                    sup 20
+                                    svg.icon
+                                        use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-star")
+                                a(href="#0" class="toggle-action")
+                                svg.icon
+                                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-bookmark-stroke")
+
+                        .card-content
+                            p
+                                strong عله توسم فى سؤاله ان يزيل بعض الضيق عن الاخر فقط !!!
+                            p م، عله هذا. لكنني لم أتحدث عن سؤال عن الآخر. وبالمناسبة لا أشكك في نوايا المحبين ولا إخلاصهم، لكن الحب لو لم ينضبط بالعقل صار "الحب الذي قتل"، وصار كحب من قتلت صاحبها وهي تذب عنه ذبابة ضايقته
+                            .card-content__tags
+                                a(href="#0") #واعى_ضد_الإباحية
+
+                        .card-footer
+                            ul.col-sm-10.socialicons
+                                li.socialicons-item.toggle-action.socialicons--facebook
+                                    a(href="#0" class="socialicons--icon")
+                                        svg.icon
+                                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-facebook")
+                                        span.socialicons--tooltip أنشر على فيسبوك
+                                li.socialicons-item.toggle-action.socialicons--twitter
+                                    a(href="#0" class="socialicons--icon")
+                                        svg.icon
+                                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-twitter")
+                                        span.socialicons--tooltip أنشر على تويتر
+                                li.socialicons-item.toggle-action.socialicons--copy
+                                    a(href="#0" class="socialicons--icon")
+                                        svg.icon
+                                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-copy")
+                                        span.socialicons--tooltip نسخ محتوى النص
+                                li.socialicons-item.toggle-action.socialicons--like
+                                    a(href="#0" class="socialicons--icon")
+                                        svg.icon
+                                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-heart")
+                                        span.socialicons--count 2500
+                                        span.socialicons--tooltip إعجاب
+                            .col-sm-2.text-left
+                                a(href="./post-details-pug.html" class="card-action") رابط التفاصيل
+                    include modules/footer.pug
+        include modules/modal.pug
+        include modules/scripts.pug

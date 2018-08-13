@@ -1,37 +1,35 @@
 mixin sidenav(mainLink='', askLink='', facebookLink='', twitterLink='', favouritesLink='')
-    .container-fluid
-        .row
-            .l-sidenav
-                nav.sidenav
-                    ul
-                        li(class = mainLink)
-                            a(href="index-pug.html" class="sidenav-link")
-                                svg.icon.sidenav--icon
-                                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-home")
-                                span.sidenav--title الرئيسية
+    .l-sidenav
+        nav.sidenav
+            ul
+                li(class = mainLink)
+                    a(href="index-pug.html" class="sidenav-link")
+                        svg.icon.sidenav--icon
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-home")
+                        span.sidenav--title الرئيسية
 
-                        li(class = askLink)
-                            a(href="ask-pug.html" class="sidenav-link sidenav-ask")
-                                svg.icon.sidenav--icon
-                                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-ask")
-                                span.sidenav--title آسك
+                li(class = askLink)
+                    a(href="ask-pug.html" class="sidenav-link sidenav-ask")
+                        svg.icon.sidenav--icon
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-ask")
+                        span.sidenav--title آسك
 
-                        li(class = facebookLink)
-                            a(href="facebook-pug.html" class="sidenav-link sidenav-facebook")
-                                svg.icon.sidenav--icon
-                                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-facebook")
-                                span.sidenav--title فيسبوك
+                li(class = facebookLink)
+                    a(href="facebook-pug.html" class="sidenav-link sidenav-facebook")
+                        svg.icon.sidenav--icon
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-facebook")
+                        span.sidenav--title فيسبوك
 
-                        li(class = twitterLink)
-                            a(href="twitter-pug.html" class="sidenav-link sidenav-twitter")
-                                svg.icon.sidenav--icon
-                                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-twitter")
-                                span.sidenav--title تويتر
+                li(class = twitterLink)
+                    a(href="twitter-pug.html" class="sidenav-link sidenav-twitter")
+                        svg.icon.sidenav--icon
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-twitter")
+                        span.sidenav--title تويتر
 
-                        li(class = favouritesLink)
-                            a(href="favourites-pug.html" class="sidenav-link sidenav-fav")
-                                svg.icon.sidenav--icon
-                                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-star")
-                                span.sidenav--title الحسابات المفضلة
+                li(class = favouritesLink)
+                    a(href="favourites-pug.html" class="sidenav-link sidenav-fav")
+                        svg.icon.sidenav--icon
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-star")
+                        span.sidenav--title الحسابات المفضلة
 
 
