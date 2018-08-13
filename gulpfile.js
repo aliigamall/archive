@@ -4,18 +4,16 @@ const sourcemaps = require('gulp-sourcemaps');
 const cssmin = require('gulp-cssmin');
 const imagemin = require('gulp-imagemin');
 const replace = require('gulp-replace');
-pug = require('gulp-pug');
 const browserSync = require('browser-sync').create();
 
 
-gulp.task('serve', ['sass', 'pug'], function() {
+gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
         server: "./"
     });    
 
 	gulp.watch('sass/**/*.scss', ['sass']);
-	gulp.watch('templates/**/*.pug', ['pug']);
     gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
@@ -33,13 +31,6 @@ gulp.task('sass',function(){
 gulp.task('sass:watch', function(){
 	gulp.watch('sass/**/*.scss', ['sass']);
 });
-
-gulp.task('pug', function() {  
-	return gulp.src('templates/*.pug')
-		.pipe(pug()) // pipe to pug plugin
-		.pipe(gulp.dest('./'))
-		.pipe(browserSync.stream()); // tell gulp our output folder
-  });
 
 // deploy tasks
 gulp.task('deploy', ['DeployHtml', 'DeployCss', 'DeployFonts', 'DeployImages', 'DeployScripts']);
